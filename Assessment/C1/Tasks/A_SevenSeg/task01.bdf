@@ -277,19 +277,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 280 232)
 )
 (connector
-	(pt 432 200)
-	(pt 536 200)
-	(bus)
-)
-(connector
-	(pt 536 216)
-	(pt 456 216)
-)
-(connector
-	(pt 456 216)
-	(pt 456 296)
-)
-(connector
 	(pt 264 296)
 	(pt 456 296)
 )
@@ -308,14 +295,6 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 248 336)
 	(pt 464 336)
-)
-(connector
-	(pt 464 336)
-	(pt 464 232)
-)
-(connector
-	(pt 464 232)
-	(pt 536 232)
 )
 (connector
 	(pt 784 200)
@@ -349,10 +328,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 984 360)
 )
 (connector
-	(pt 752 200)
-	(pt 752 520)
-)
-(connector
 	(pt 768 200)
 	(pt 768 464)
 )
@@ -367,11 +342,6 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 816 200)
 	(pt 832 200)
-	(bus)
-)
-(connector
-	(pt 752 200)
-	(pt 768 200)
 	(bus)
 )
 (connector
@@ -427,17 +397,52 @@ https://fpgasoftware.intel.com/eula.
 	(pt 872 360)
 )
 (connector
+	(pt 752 208)
+	(pt 752 520)
+)
+(connector
+	(pt 456 216)
+	(pt 536 216)
+)
+(connector
+	(pt 456 296)
+	(pt 456 216)
+)
+(connector
+	(pt 464 336)
+	(pt 464 232)
+)
+(connector
+	(pt 464 232)
+	(pt 536 232)
+)
+(connector
+	(pt 432 200)
+	(pt 536 200)
+	(bus)
+)
+(connector
+	(pt 752 200)
+	(pt 752 208)
+	(bus)
+)
+(connector
 	(text "led[6..0]" (rect 730 184 768 201)(font "Intel Clear" ))
 	(pt 720 200)
 	(pt 752 200)
 	(bus)
 )
+(connector
+	(pt 752 200)
+	(pt 768 200)
+	(bus)
+)
 (junction (pt 264 216))
 (junction (pt 816 200))
-(junction (pt 752 200))
 (junction (pt 768 200))
 (junction (pt 784 200))
 (junction (pt 800 200))
 (junction (pt 832 200))
+(junction (pt 752 200))
 (text "7-Segment LED Display" (rect 976 200 1117 219)(font "Intel Clear" (font_size 8)))
 (rectangle (rect 896 224 1200 576)(fill (color 170 255 255)))

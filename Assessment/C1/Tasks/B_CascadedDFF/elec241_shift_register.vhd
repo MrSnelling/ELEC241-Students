@@ -23,11 +23,23 @@ entity elec241_shift_register is
 end entity;
 
 architecture rtl of elec241_shift_register is
-
-
-
+	signal 	Q0, Q1, Q2 : std_logic;
 begin
 
-
-
+process(clk) is
+begin
+    if rising_edge(clk) then
+        if enable = '0' then
+            data_out <= '0';
+        else
+	    	Q0 <= data_in;
+		if rising_edge(clk) then
+			Q1 <= Q0;
+			if rising_edge(clk) then
+				Q2 <= Q1;
+			end if;
+		end if;
+        end if;
+    end if;
+end process;
 end rtl;
