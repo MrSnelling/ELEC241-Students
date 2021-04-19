@@ -1,0 +1,74 @@
+
+ELEC241 Coursework C1 completed by students 10611816 and 10446296
+________________________________________
+
+Task 1
+We feel that we successfully completed all sections. 
+
+Our final logic statements for the 7 outputs were:
+output(0) <= (A and not B and not C) or (A and not D) or (not A and B and D) or (not A and C) or (B and C)or (not B and not D);		
+output(1) <= (not A and C and D) or (not A and not D and not C) or (A and B and not C and D) or (not B and not C) or (not B and not D);
+output(2) <= (not A and not C) or (not A and D) or (not A and B and C and not D) or (A and not B) or (A and B and not C and D);
+output(3) <= (A and not B and D) or (A and not C) or (not A and not B and C) or (not A and not B and not D) or (B and C and not D) or (B and not C and D);
+output(4) <= (A and B) or (A and C) or (not D and not B) or (C and not D);
+output(5) <= (A and B and C) or (A and C and not D) or (A and not B and D) or (A and not B and not C) or (not A and B and not C) or (not A and not C and not D) or (not D and B);
+output(6) <= (not A and B and not C) or (not A and C and not B)  or (not A and C and not D) or (A and B and C) or (A and not B and not D)  or (A and not B and not C) or (A and C and D) or (B and not C and D);	
+
+We then used the given entity to make the architecture of the sevenseg and used ModelSim to test that our boolean was correct by clocking the 4 signals to generate all 16 outputs. 
+Next we created a test bench that ran through all the input signals for each combination of the reset and enable inputs as well to exhaustively test them. 
+
+After opening ModelSim and changing the directory to the folder A_SevenSeg, running the command "do sim_sevenseg.do" compiles all of our vhd files and runs the testbench simulation and sets up the waveform.
+
+.VHD files: (Path : A_SevenSeg)
+seven_seg_decode.vhd
+
+.VHT files: (Path: A_SevenSeg)
+seven_seg_decode_test.vhd
+
+.do files:
+sim_sevenseg.do
+________________________________________
+
+Task 2
+Again, we believe we have completed all of the steps in this task to a high quality.
+We began by compiling the project in quartus and then edited the file "elec241_shift_register.vhd" and "elec241_shift_register_test.vht" which are found in the path B_CascadedDFF/simulation/modelsim 
+as this is where the project made the work folder.
+
+We also created a file called DFF.vhd which is our D type FlipFlop component.
+
+When ModelSim is running with the current directory selected as the modelsim folder, running the command "do sim_cascaded.do" compiles the required files and runs the testbench simulation
+to the end and makes the waveform. As we have used assert commands with the severity failure, if there was an issue in our code the simulation would stop and an error message would be displayed.simulation
+
+.VHD files: (Path: B_CascadedDFF/simulation/modelsim)
+elec241_shift_register.vhd
+
+.VHT files: (Path: B_CascadedDFF/simulation/modelsim)
+elec241_shift_register_test.vht
+
+.do files: (Path: B_CascadedDFF/simulation/modelsim)
+sim_cascaded.do
+________________________________________
+
+Task 3
+This final task was also fully completed. We first opened the project file in Quartus and compiled it before running it in ModelSim and using the "do sim_top_level.do" command.
+Our work file was therefore created in the path C_ControllerDatapath/simulation/modelsim and this is where we have edited the code in file "ControllerDatapath_vhd.vht". 
+Firstly we used the init process block to perform a reset as required and then used the same block to generate the clock signal which changes from high to low every 
+25 ps. We then started completing the basic tests which all took one clock cycle (50 ps).
+
+We believe we have completed these tests with no issues and the code is concise and clear so that someone else can see how we have done this.
+We also made sure to use an assert command at each point to check our work and make sure there are no issues with our test bench.
+
+The final step was to use the sum block to calculate (00000001 + 00000001 + 10000000 + 01000000 + 00000001 + 00100000). We did this in 5 cycles which although it is very streamlined,
+it was possibly not the most optimised method. However we knew that out method was correct and used the assert command to ensure we got the correct answer of ACC = 11100011.
+
+This time we edited the existing .do file to run the simulation and recompile all files from the directory C_ControllerDatapath/simulation/modelsim. The command to run this is "do sim_top_level.do"
+
+.VHD files: (Path: C_ControllerDatapath)
+ControllerDatapath_vhd.vhd
+
+.VHT files: (Path: C_ControllerDatapath/simulation/modelsim)
+ControllerDatapath_vhd.vht
+
+.do files: (Path: C_ControllerDatapath/simulation/modelsim)
+sim_top_level.do
+________________________________________
